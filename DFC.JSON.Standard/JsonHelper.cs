@@ -5,9 +5,9 @@ using Newtonsoft.Json.Linq;
 
 namespace DFC.JSON.Standard
 {
-    public static class JsonExtension
+    public class JsonHelper : IJsonHelper
     {
-        public static string SerializeObjectAndRenameIdProperty<T>(T resource, string idName, string newIdName)
+        public string SerializeObjectAndRenameIdProperty<T>(T resource, string idName, string newIdName)
         {
             var json = JsonConvert.SerializeObject(resource);
             var resourceJObject = JObject.Parse(json);
@@ -21,7 +21,7 @@ namespace DFC.JSON.Standard
             return resourceJObject.ToString();
         }
 
-        public static string SerializeObjectsAndRenameIdProperty<T>(List<T> resource, string idName, string newIdName)
+        public string SerializeObjectsAndRenameIdProperty<T>(List<T> resource, string idName, string newIdName)
         {
             var json = JsonConvert.SerializeObject(resource);
             var tokens = JArray.Parse(json);
@@ -40,7 +40,7 @@ namespace DFC.JSON.Standard
             return tokens.ToString();
         }
 
-        public static void RenameProperty(JToken token, string newName)
+        public void RenameProperty(JToken token, string newName)
         {
             if (token == null)
                 throw new ArgumentNullException(nameof(token), "Cannot rename a null token");
@@ -66,7 +66,7 @@ namespace DFC.JSON.Standard
             property.Replace(newProperty);
         }
 
-        public static void UpdatePropertyValue(JToken token, object value)
+        public void UpdatePropertyValue(JToken token, object value)
         {
             if (token == null)
                 throw new ArgumentNullException(nameof(token), "Cannot rename a null token");
