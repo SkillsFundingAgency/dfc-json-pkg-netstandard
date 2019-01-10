@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DFC.JSON.Core", "DFC.JSON.Core\DFC.JSON.Core.csproj", "{7C89F506-CFD4-4A62-BE33-12B50ADA6CCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DFC.JSON.Standard", "DFC.JSON.Standard\DFC.JSON.Standard.csproj", "{7C89F506-CFD4-4A62-BE33-12B50ADA6CCC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

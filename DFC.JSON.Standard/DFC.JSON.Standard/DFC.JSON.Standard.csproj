@@ -6,8 +6,8 @@
     <Description>DFC Json Extension</Description>
     <PackageReleaseNotes>DFC Json Extension Library</PackageReleaseNotes>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Product>DFC.JSON.Core</Product>
-    <PackageId>DFC.JSON.Core</PackageId>
+    <Product>DFC.JSON.Standard</Product>
+    <PackageId>DFC.JSON.Standard</PackageId>
     <Version>1.0.0</Version>
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <Company>ESFA</Company>
