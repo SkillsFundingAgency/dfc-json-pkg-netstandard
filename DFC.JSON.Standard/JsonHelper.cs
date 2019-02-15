@@ -91,5 +91,13 @@ namespace DFC.JSON.Standard
             var newProperty = new JProperty(property.Name, value);
             property.Replace(newProperty);
         }
+
+        public void CreatePropertyOnJObject(JObject jObject, string propName, object value)
+        {
+            if(jObject == null || value == null)
+                return;
+
+            jObject.Add(new JProperty(propName, value));
+        }
     }
 }

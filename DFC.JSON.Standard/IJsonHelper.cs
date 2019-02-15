@@ -11,5 +11,6 @@ namespace DFC.JSON.Standard
         string SerializeObjectsAndRenameIdProperty<T>(List<T> resource, string idName, string newIdName);
         void RenameProperty(JToken token, string newName);
         void UpdatePropertyValue(JToken token, object value);
+        void CreatePropertyOnJObject(JObject jObject, string propName, object value);
     }
 }
