@@ -2,7 +2,7 @@
 
 namespace DFC.JSON.Standard.Attributes
 {
-    public class JsonIgnoreSerializeAttribute : Attribute
+    public class JsonIgnoreOnSerialize : Attribute
     {
     }
 }

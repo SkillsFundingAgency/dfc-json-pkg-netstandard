@@ -13,7 +13,7 @@ namespace DFC.JSON.Standard
         {
             var settings = new JsonSerializerSettings
             {
-                ContractResolver = new IgnoreSerializerContractResolver<JsonIgnoreSerializeAttribute>()
+                ContractResolver = new IgnoreSerializerContractResolver<JsonIgnoreOnSerialize>()
             };
 
             var json = JsonConvert.SerializeObject(resource, settings);
@@ -36,7 +36,7 @@ namespace DFC.JSON.Standard
         {
             var settings = new JsonSerializerSettings
             {
-                ContractResolver = new IgnoreSerializerContractResolver<JsonIgnoreSerializeAttribute>()
+                ContractResolver = new IgnoreSerializerContractResolver<JsonIgnoreOnSerialize>()
             };
 
             var json = JsonConvert.SerializeObject(resource, settings);
