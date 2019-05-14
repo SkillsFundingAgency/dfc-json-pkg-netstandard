@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using DFC.JSON.Standard.Attributes;
+using DFC.JSON.Standard.ContractResolvers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -9,7 +11,16 @@ namespace DFC.JSON.Standard
     {
         public string SerializeObjectAndRenameIdProperty<T>(T resource, string idName, string newIdName)
         {
-            var json = JsonConvert.SerializeObject(resource);
+            var settings = new JsonSerializerSettings
+            {
+                ContractResolver = new IgnoreSerializerContractResolver<JsonIgnoreOnSerialize>()
+            };
+
+            var json = JsonConvert.SerializeObject(resource, settings);
+
+            if(string.IsNullOrEmpty(json))
+                return string.Empty;
+
             var resourceJObject = JObject.Parse(json);
 
             if (!resourceJObject.HasValues)
@@ -23,7 +34,16 @@ namespace DFC.JSON.Standard
 
         public string SerializeObjectsAndRenameIdProperty<T>(List<T> resource, string idName, string newIdName)
         {
-            var json = JsonConvert.SerializeObject(resource);
+            var settings = new JsonSerializerSettings
+            {
+                ContractResolver = new IgnoreSerializerContractResolver<JsonIgnoreOnSerialize>()
+            };
+
+            var json = JsonConvert.SerializeObject(resource, settings);
+
+            if (string.IsNullOrEmpty(json))
+                return string.Empty;
+
             var tokens = JArray.Parse(json);
 
             foreach (var jToken in tokens)
@@ -99,5 +119,6 @@ namespace DFC.JSON.Standard
 
             jObject.Add(new JProperty(propName, value));
         }
+
     }
 }
