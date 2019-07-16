@@ -120,5 +120,20 @@ namespace DFC.JSON.Standard
             jObject.Add(new JProperty(propName, value));
         }
 
+        public string GetValue(string json, string propertyName)
+        {
+            if (string.IsNullOrWhiteSpace(json))
+                return null;
+
+            var jsonJObject = JObject.Parse(json);
+
+            return jsonJObject[propertyName] != null ? jsonJObject[propertyName].ToString() : null;
+        }
+
+        public bool DoesPropertyExist(JObject jsonJObject, string propertyName)
+        {
+            return jsonJObject[propertyName] != null;
+        }
+
     }
 }

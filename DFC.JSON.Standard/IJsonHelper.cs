@@ -12,5 +12,7 @@ namespace DFC.JSON.Standard
         void RenameProperty(JToken token, string newName);
         void UpdatePropertyValue(JToken token, object value);
         void CreatePropertyOnJObject(JObject jObject, string propName, object value);
+        string GetValue(string json, string propertyName);
+        bool DoesPropertyExist(JObject jsonJObject, string propertyName);
     }
 }
